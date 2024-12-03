@@ -5,6 +5,7 @@ type part =
 type day =
   | DayOne of part
   | DayTwo of part
+  | DayThree of part
 
 val get_puzzle : day -> string
 val get_puzzle_lines : day -> string list

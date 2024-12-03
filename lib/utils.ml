@@ -7,6 +7,7 @@ type part =
 type day =
   | DayOne of part
   | DayTwo of part
+  | DayThree of part
 
 let get_puzzle_file day =
   let dir_name = "puzzles/" in
@@ -16,6 +17,8 @@ let get_puzzle_file day =
     | DayOne Puzzle -> "day1/puzzle.txt"
     | DayTwo Example -> "day2/example.txt"
     | DayTwo Puzzle -> "day2/puzzle.txt"
+    | DayThree Example -> "day3/example.txt"
+    | DayThree Puzzle -> "day3/puzzle.txt"
   in
   dir_name ^ file_name
 ;;

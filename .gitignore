@@ -1,5 +1,6 @@
 # ocamlbuild working directory
 _build/
+advent_of_code_2024.opam
 
 # ocamlbuild targets
 *.byte

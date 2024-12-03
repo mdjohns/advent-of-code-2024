@@ -18,11 +18,7 @@ let is_safe lines =
           Stop false
         else (
           let new_direction =
-            if curr > prev_val
-            then Some `Increasing
-            else if curr < prev_val
-            then Some `Decreasing
-            else direction (* No change if the numbers are equal *)
+            if curr > prev_val then Some `Increasing else Some `Decreasing
           in
           match direction, new_direction with
           | Some `Increasing, Some `Decreasing -> Stop false

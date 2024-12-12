@@ -14,42 +14,28 @@ let is_length_even num =
 
 let multiply_by_2024 num =
   let int = int_of_string num in
-  if equal_int int Int.max_value
-  then failwith "Too big"
-  else (
-    let multiplied = int * 2024 in
-    string_of_int multiplied)
+  let multiplied = 2024 * int in
+  string_of_int multiplied
 ;;
 
-let remove_leading_zero num =
-  match num with
+let rec remove_leading_zero nums =
+  let len = List.length nums in
+  match nums with
   | [] -> []
-  | [ zero ] -> [ zero ]
-  | h :: t -> if equal_char '0' h then t else h :: t
-;;
-
-let remove_leading_zeroes num =
-  String.to_list num
-  |> List.fold_until
-       ~init:([], false)
-       ~f:(fun (chars, has_zero) curr ->
-         match curr with
-         | '0' ->
-           if has_zero
-           then Stop (String.of_char_list chars)
-           else (
-             match chars with
-             | [] -> Continue ([ curr ], true)
-             | _ -> Continue (chars @ [ curr ], true))
-         | c -> Continue (chars @ [ c ], has_zero))
-       ~finish:(fun (chars, _) -> remove_leading_zero chars |> String.of_char_list)
+  | one_item when equal_int 1 len -> one_item
+  | h :: t -> if equal_char '0' h then remove_leading_zero t else h :: t
 ;;
 
 let split_into_two num =
   let len = String.length num in
   let half = len / 2 in
   let first = String.slice num 0 half in
-  let second = String.slice num half len |> remove_leading_zeroes in
+  let second =
+    String.slice num half len
+    |> String.to_list
+    |> remove_leading_zero
+    |> String.of_char_list
+  in
   [ first ] @ [ second ]
 ;;
 
@@ -68,8 +54,6 @@ let process_rule num rule =
 ;;
 
 let rec process_puzzle nums iterations_left =
-  let formatted = String.concat nums ~sep:", " in
-  Printf.printf "\nBlinks: %d | Num nums: %s\n" iterations_left formatted;
   if equal_int 0 iterations_left
   then nums
   else (

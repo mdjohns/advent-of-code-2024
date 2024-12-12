@@ -9,6 +9,7 @@ type day =
   | DayTwo of part
   | DayThree of part
   | DayFour of part
+  | DayEleven of part
 
 let get_puzzle_file day =
   let dir_name = "puzzles/" in
@@ -22,6 +23,8 @@ let get_puzzle_file day =
     | DayThree Puzzle -> "day3/puzzle.txt"
     | DayFour Example -> "day4/example.txt"
     | DayFour Puzzle -> "day4/puzzle.txt"
+    | DayEleven Example -> "day11/example.txt"
+    | DayEleven Puzzle -> "day11/puzzle.txt"
   in
   dir_name ^ file_name
 ;;
@@ -29,6 +32,7 @@ let get_puzzle_file day =
 let get_puzzle day =
   let file = get_puzzle_file day in
   Stdio.In_channel.with_file file ~f:(fun channel -> In_channel.input_all channel)
+  |> String.strip
 ;;
 
 let get_puzzle_lines day =

@@ -6,7 +6,8 @@
   day02_part2
   day03_part1
   day03_part2
-  day04_part1)
+  day04_part1
+  day11_part1)
  (names
   day01_part1
   day01_part2
@@ -14,7 +15,14 @@
   day02_part2
   day03_part1
   day03_part2
-  day04_part1)
+  day04_part1
+  day11_part1)
  (preprocess
   (pps ppx_deriving.show ppx_deriving.ord ppx_compare ppx_sexp_conv))
  (libraries angstrom core ocamlgraph utils))
+
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+

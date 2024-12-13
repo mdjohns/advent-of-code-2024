@@ -19,7 +19,7 @@
  (name advent_of_code_2024)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends angstrom core ocaml)
  (tags
   ("add topics" "to describe" your project)))
 

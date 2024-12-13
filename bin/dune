@@ -18,8 +18,8 @@
   day04_part1
   day11_part1)
  (preprocess
-  (pps ppx_deriving.show ppx_deriving.ord ppx_compare ppx_sexp_conv))
- (libraries angstrom core ocamlgraph utils))
+  (pps ppx_deriving.show))
+ (libraries angstrom core utils))
 
 (env
  (dev

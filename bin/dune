@@ -7,7 +7,10 @@
   day03_part1
   day03_part2
   day04_part1
-  day11_part1)
+  day04_part2
+  day05_part1
+  day11_part1
+  day11_part2)
  (names
   day01_part1
   day01_part2
@@ -16,7 +19,10 @@
   day03_part1
   day03_part2
   day04_part1
-  day11_part1)
+  day04_part2
+  day05_part1
+  day11_part1
+  day11_part2)
  (preprocess
   (pps ppx_deriving.show))
  (libraries angstrom core utils))

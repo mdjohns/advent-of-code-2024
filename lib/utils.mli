@@ -7,6 +7,7 @@ type day =
   | DayTwo of part
   | DayThree of part
   | DayFour of part
+  | DayFive of part
   | DayEleven of part
 
 val get_puzzle : day -> string

@@ -9,20 +9,23 @@ type day =
   | DayTwo of part
   | DayThree of part
   | DayFour of part
+  | DayFive of part
   | DayEleven of part
 
 let get_puzzle_file day =
   let dir_name = "puzzles/" in
   let file_name =
     match day with
-    | DayOne Example -> "day1/example.txt"
-    | DayOne Puzzle -> "day1/puzzle.txt"
-    | DayTwo Example -> "day2/example.txt"
-    | DayTwo Puzzle -> "day2/puzzle.txt"
-    | DayThree Example -> "day3/example.txt"
-    | DayThree Puzzle -> "day3/puzzle.txt"
-    | DayFour Example -> "day4/example.txt"
-    | DayFour Puzzle -> "day4/puzzle.txt"
+    | DayOne Example -> "day01/example.txt"
+    | DayOne Puzzle -> "day01/puzzle.txt"
+    | DayTwo Example -> "day02/example.txt"
+    | DayTwo Puzzle -> "day02/puzzle.txt"
+    | DayThree Example -> "day03/example.txt"
+    | DayThree Puzzle -> "day03/puzzle.txt"
+    | DayFour Example -> "day04/example.txt"
+    | DayFour Puzzle -> "day04/puzzle.txt"
+    | DayFive Example -> "day05/example.txt"
+    | DayFive Puzzle -> "day05/puzzle.txt"
     | DayEleven Example -> "day11/example.txt"
     | DayEleven Puzzle -> "day11/puzzle.txt"
   in

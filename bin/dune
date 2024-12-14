@@ -9,6 +9,7 @@
   day04_part1
   day04_part2
   day05_part1
+  day05_part2
   day11_part1
   day11_part2)
  (names
@@ -21,6 +22,7 @@
   day04_part1
   day04_part2
   day05_part1
+  day05_part2
   day11_part1
   day11_part2)
  (preprocess
@@ -31,4 +33,3 @@
  (dev
   (flags
    (:standard -warn-error -A))))
-
